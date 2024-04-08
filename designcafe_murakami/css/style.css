@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* header */
+.header_inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 7.386%;
+  /* ↑　147/1990= 0.07386 =accessから画面右までの距離=*/
+  padding-left: 2.512%;
+  /* ↑　50/1990= 0.02512*/
+  position: absolute;
+  width: 100%;
+}
+
+.header_nav ul{
+  display: flex;
+  gap: 77px;
+}
+
+.header_nav ul li{
+  color: #fff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+  "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: bold;
+}
+
+/* ロゴ */
+.header_logo{
+  width: 227px;
+}
+
+/* メイン */
+main{
+  background-color: #e8d9bf;
+}
+
+/* 共通 */
+.lead,#aboutus,#menu,#enent,#footer{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* リード */
+.lead{
+  padding-top: 100px;
+  text-align: center;
+}
+
+.copy{
+  font-size: 30px;
+  padding-bottom: 60px;
+  line-height: 1.5;
+}
+
+.title{
+  font-size: 82px;
+}
+
+.text{
+  padding-top: 45px;
+  padding-bottom: 50px;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+/* ABOUT */
+#aboutus .contents{
+  display: flex;
+  gap: 77px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+#aboutus .first{
+  flex-shrink: 0; 
+}
+/* ↑flex-shrink: 0;をつけないと、画像が縮小されてしまいます。しかし、flex-shrink: 0;をつけると画面幅を狭くしたときにスクロールが生じてしまいます。ベストな方法が分かりません。 */
+
+#aboutus .image{
+  border-radius: 0 0 50px 0;
+}
+
+#aboutus h2{
+  width: 260px;
+  padding: 60px 0;
+}
+
+#aboutus h3{
+  font-size: 44px;
+  padding-bottom: 40px;
+}
+
+#aboutus p{
+  line-height: 1.5;
+}
+
+/* MENU */
+#menu h2{
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 45px;
+  width: 144px;
+}
+
+#menu .drink,.food,.sweets{
+  position:relative;
+}
+
+#menu ul img{
+  border-radius: 0 50px 0 0;
+}
+
+#menu h3{
+  color: #d30202;
+  font-size: 38px;
+  position:absolute;
+  bottom: -10%;
+}
+
+#menu p{
+  position: absolute;
+  padding-top: 40px;
+}
+
+#menu ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 45px;
+  padding: 0 10px;
+}
+
+/* GALLERY */
+#gallery h2{
+  margin: 0 auto;
+  margin-top: 200px;
+  padding-bottom: 25px;
+  width: 240px;
+}
+
+/* GALLERYの左矢印 */
+#gallery div{
+  position: relative;
+}
+
+#gallery .arrow_l {
+  display: inline-block;
+  padding-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#gallery .arrow_l:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-top: solid 5px #ffffff;
+  border-left: solid 5px #ffffff;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  bottom: 0;
+  margin: auto;
+}
+
+/* GALLERYの右矢印 */
+#gallery .arrow_r {
+  display: inline-block;
+  padding-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#gallery .arrow_r:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-top: solid 5px #ffffff;
+  border-right: solid 5px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  bottom: 0;
+  margin: auto;
+}
+
+#gallery ul{
+  display: flex;
+}
+
+#gallery li{
+  width: 100vw;
+}
+
+/* ENENT */
+#event h2{
+  width: 165px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 45px;
+}
+
+#event .box{
+  max-width: 1000px;
+  margin: 0 auto;
+  border: solid 3px #4f260b;
+  background: #ffffff;
+  padding: 35px 60px;
+  text-align: center;
+}
+
+#event ul{
+  text-align: left;
+  display: inline-block;
+}
+
+#event li{
+  display: flex;
+  align-items: center;
+}
+
+#event .info{
+  text-decoration: underline;
+  line-height: 2;
+  margin-left: 45px;
+}
+
+/* ACCESS */
+#access h2{
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 45px;
+}
+
+#access .map{
+  filter: grayscale(100%) invert(92%) contrast(83%);
+  line-height: 0;
+}
+
+/* フッター */
+#footer{
+  background-color: #fff;
+}
+
+#footer .footer_inner{
+  display: flex;
+  gap: 60px;
+  padding-top: 83px;
+  padding-bottom: 80px;
+}
+
+#footer .footer_logo{
+  width: 220px;
+}
+
+#footer .note{
+  text-align: center;
+}
+
+#footer li{
+  line-height: 25px;
+}
+
+/* トップへ戻るボタン */
+.toTOP{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 125px;
+}
