@@ -69,10 +69,14 @@ main{
   gap: 77px;
   margin: 0 auto;
   padding: 0 10px;
+  align-items: center;
+  /* ↑align-itemsを付けた フィードバック後に修正 */
 }
 
 #aboutus .first{
   flex-shrink: 0; 
+  width: 50.251%;
+  /* ↑widthをつけた フィードバック後に修正。1000/1990 */
 }
 /* ↑flex-shrink: 0;をつけないと、画像が縮小されてしまいます。しかし、flex-shrink: 0;をつけると画面幅を狭くしたときにスクロールが生じてしまいます。ベストな方法が分かりません。 */
 
@@ -82,7 +86,8 @@ main{
 
 #aboutus h2{
   width: 260px;
-  padding: 60px 0;
+  padding-bottom: 60px;
+  /* ↑padding-topではなく、bottomを付けた フィードバック後に修正 */
 }
 
 #aboutus h3{
