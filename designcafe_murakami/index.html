@@ -6,7 +6,10 @@
   <title>デザインカフェ</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <!-- ↓jQueryの読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
   <!-- ヘッダーエリア -->
   <header id="header">
@@ -27,10 +30,28 @@
         </ul>
       </nav>
     </div>
+
+    <!-- ハンバーガーメニュー・sp用 -->
+    <div class="hamburger">
+      <span></span>
+    </div>
+    <nav class="header_nav-sp">
+      <ul>
+        <li><a href="#aboutus">ABOUT US</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#event">EVENT</a></li>
+        <li><a href="#access">ACCESS</a></li>
+      </ul>
+    </nav>
   </header>
+
   <!-- スライダー -->
   <div class="slider">
+    <picture>
+      <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width : 767px)">
     <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子">
+  </picture>
   </div>
 
 <!-- メイン -->
@@ -43,6 +64,8 @@
       <p class="title">ハッピーに溢れる1日を
       <br>1杯のコーヒーから。</p>
       <p class="text">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+      <!-- <LEAD sp用> -->
+      <p class="text-sp">毎日を丁寧に大切に過ごしたい。<br> だからこそ一杯一杯丁寧にコーヒーを入れ<br>足を運んでくれるお客さんには落ち着く空間と<br>こだわりのコーヒーを提供したい。</p>
     </section>
 
 <!-- ABOUT -->
@@ -65,6 +88,23 @@
         </div>
       </div>
       <!-- ↑ aboutの中身の要素が同じものではないのでulは適切ではない-->
+
+      <!-- <ABOUT sp用> -->
+      <div class="contents-sp">
+        <h2 class="logo-sp">
+          <img src="./images/about_us@2x.png" alt="アバウトのロゴ">
+        </h2>
+        <div class="first-sp">
+          <img src="./images/about_us@2x-100.jpg" class="image-sp" alt="コーヒーカップの写真">
+        </div>
+          <h3>
+          私たちが提供する
+          <br>こだわりのコーヒー
+          </h3>
+          <p>
+            サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+          </p>
+      </div>
     </section>
 
 <!-- MENU -->
@@ -191,5 +231,15 @@
       <img src="./images/to_top@2x.png">
     </a>
   </p>
+
+  <!-- jQueryの記述 -->
+  <script>
+    $(function(){
+      $(".hamburger").on("click", function(){
+        $(".hamburger").toggleClass("open");
+        $(".header_nav-sp").fadeToggle();
+      });
+    });
+  </script>
 </body>
 </html>

@@ -29,6 +29,105 @@
   width: 227px;
 }
 
+.header_nav-sp{
+  display: none;
+}
+.hamburger{
+  display: none;
+}
+/* ↑pc版の時にsp用を消す */
+
+/* ハンバーガーメニュー */
+@media screen and (max-width:1000px) {
+  .header_nav{
+    display: none;
+  }
+
+  /* ハンバーガーメニューの枠組み */
+  .hamburger{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  /* ハンバーガーメニューの3本線 */
+  .hamburger span{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 15px;
+    transition: .3s;
+  }
+  /* 疑似要素 上下の線 */
+  /* ↓上の線 */
+  .hamburger span::before{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    content: "";
+    top: -12px;
+    transition: .3s;
+  }
+/* ↓下の線 */
+.hamburger span::after{
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  content: "";
+  bottom: -12px;
+  transition: .3s;
+  }
+
+/* hammenuが開いたとき */
+.open span{
+  background-color: transparent;
+}
+/* ↑色を透明にする */
+.open span::before{
+  transform: rotate(45deg);
+  /* ↑45度線をつくる */
+  top: 0;
+  /* ↑交点を作る */
+}
+.open span::after{
+  transform: rotate(-45deg);
+    /* ↑-45度線をつくる */
+  bottom: 0;
+    /* ↑交点を作る */
+}
+
+/* sp用nav */
+.header_nav-sp{
+  position: absolute;
+  /* 画面全体に黒背景を広げる */
+  width: 100%;
+  height: 100vh;
+  background-color: #000000b3;
+}
+.header_nav-sp ul{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.header_nav-sp li{
+  color: #fff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+  "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: bold;
+}
+}
+
 /* メイン */
 main{
   background-color: #e8d9bf;
@@ -63,6 +162,10 @@ main{
   line-height: 1.5;
 }
 
+.text-sp{
+  display: none;
+}
+
 /* ABOUT */
 #aboutus .contents{
   display: flex;
@@ -78,7 +181,6 @@ main{
   width: 50.251%;
   /* ↑widthをつけた フィードバック後に修正。1000/1990 */
 }
-/* ↑flex-shrink: 0;をつけないと、画像が縮小されてしまいます。しかし、flex-shrink: 0;をつけると画面幅を狭くしたときにスクロールが生じてしまいます。ベストな方法が分かりません。 */
 
 #aboutus .image{
   border-radius: 0 0 50px 0;
@@ -98,6 +200,12 @@ main{
 #aboutus p{
   line-height: 1.5;
 }
+
+#aboutus .contents-sp{
+  display: none;
+}
+/* ↑pcの時、sp版を消す */
+
 
 /* MENU */
 #menu h2{
@@ -272,4 +380,142 @@ main{
   bottom: 20px;
   right: 20px;
   width: 125px;
+}
+
+@media screen and (max-width:1100px) {
+/* リード */
+  .title{
+    font-size: 70px;
+  }
+
+/* ABOUT */
+  #aboutus h3{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width:767px) {
+/* リード */
+  .lead {
+    padding-top: 40px;
+  }
+  .title{
+    font-size: 38px;
+    padding-bottom: 30px;
+  }
+  .copy{
+    font-size: 17px;
+    padding-bottom: 30px;
+    line-height: 1.5;
+  }
+  .text{
+    display: none;
+  }
+  .text-sp{
+    display: block;
+    font-size: 16px;
+    line-height: 2;
+    padding-bottom: 60px;
+  }
+
+  /* AOUT */
+  #aboutus .contents{
+    display: none;
+  }
+  #aboutus .contents-sp{
+    display: block;
+  }
+  #aboutus h2{
+    width: 160px;
+    margin: 0 auto;
+    padding-bottom: 18px;
+  }
+  #aboutus h3{
+    font-size: 36px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 2.607%;
+    /* ↑20/767 */
+    line-height: 1.5;
+  }
+  #aboutus p{
+    font-size: 16px;
+    padding-left: 2.607%;
+    padding-right: 2.607%;
+  }
+
+/* MENU */
+  #menu h2{
+    width: 83px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  #menu ul{
+    display: block;
+    padding-left: 4.954%;
+    padding-right: 4.954%;
+  }
+  #menu ul li:nth-child(n+2){
+    margin-top: 180px;
+  }
+  #menu p{
+    font-size: 17px;
+    position: absolute;
+    padding-top: 40px;
+    line-height: 2;
+  }
+  #menu h3{
+    font-size: 40px;
+  }
+
+/* GALLERY */
+  #gallery h2{
+    width: 140px;
+    padding-bottom: 20px;
+  }
+
+/* EVENT */
+  #event h2{
+    width: 95px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  #event .box{
+    padding: 20px 30px;
+    max-width: 330px;
+  }
+  #event li{
+    /* ↓長文3点リード */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  #event ul li:nth-child(2){
+    margin: 30px auto;
+  }
+  #event .info {
+    margin-left: 0;
+  }
+
+/* ACCESS */
+  #access h2{
+    width: 120px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+/* フッター */
+  #footer .footer_inner {
+    display: block;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 2.607%;
+  }
+  #footer .footer_logo{
+    padding-bottom: 35px;
+  }
+  #footer li{
+    line-height: 2;
+  }
 }
