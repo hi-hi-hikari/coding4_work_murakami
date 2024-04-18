@@ -227,7 +227,7 @@ main{
   color: #d30202;
   font-size: 38px;
   position:absolute;
-  bottom: -10%;
+  bottom: -25px;
 }
 
 #menu p{
@@ -482,7 +482,7 @@ main{
   }
   #event .box{
     padding: 20px 30px;
-    max-width: 330px;
+    width: 90%;
   }
   #event li{
     /* ↓長文3点リード */
@@ -518,4 +518,9 @@ main{
   #footer li{
     line-height: 2;
   }
+
+/* トップへ戻るボタン */
+.toTOP{
+  width: 80px;
+}
 }
