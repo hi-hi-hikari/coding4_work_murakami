@@ -4,10 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>デザインカフェ</title>
+  <!-- css読み込み -->
   <link rel="stylesheet" href="./css/reset.css">
+  <!-- slickの読み込み -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <!-- スタイルの読み込み -->
   <link rel="stylesheet" href="./css/style.css">
+
   <!-- ↓jQueryの読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- slickの読み込み -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -52,6 +60,10 @@
       <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width : 767px)">
     <img src="./images/pc_first-100.jpg" alt="カフェ店内の様子">
   </picture>
+  <picture>
+    <source srcset="./images/sp_main_vs@2x-100.jpg" media="(max-width : 767px)">
+  <img src="./images/slider_2.jpg" alt="カフェ店内の様子">
+</picture>
   </div>
 
 <!-- メイン -->
@@ -142,12 +154,8 @@
       <h2 class="logo">
         <img src="./images/gallery@2x.png" alt="GALLERYのタイトルロゴ">
       </h2>
-      <div>
-        <!-- 矢印 -->
-        <a href="" class="arrow_l"></a>
-        <a href="" class="arrow_r"></a>
         <!-- 写真一覧 -->
-        <ul>
+        <ul class="gallery">
           <li>
             <img src="./images/pc_gallary_05-100.jpg" alt="店内の様子">
           </li>
@@ -163,8 +171,10 @@
           <li>
             <img src="./images/pc_gallary_01-100.jpg" alt="ラテアート">
           </li>
+          <li>
+            <img src="./images/pc_gallary_05-100.jpg" alt="店内の様子">
+          </li>
         </ul>
-      </div>
     </section>
 
 <!-- EVENT -->
@@ -195,8 +205,13 @@
     <h2 class="logo">
       <img src="./images/access@2x.png" alt="ACCESSのタイトルロゴ">
     </h2>
+    <!-- pc表示 -->
     <div class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d46098.18569033875!2d11.216471151549397!3d43.7700230818771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m5!1s0x132a56a680d2d6ad%3A0x93d57917efc72a03!2z44OV44Kj44Os44Oz44OE44KnLCDjgqTjgr_jg6rjgqIg44OV44Kj44Os44Oz44OE44Kn!3m2!1d43.7699685!2d11.257670599999999!4m0!5e0!3m2!1sja!2sjp!4v1712470031504!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- sp表示 -->
+    <div class="map-sp">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d46098.18569033875!2d11.216471151549397!3d43.7700230818771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m5!1s0x132a56a680d2d6ad%3A0x93d57917efc72a03!2z44OV44Kj44Os44Oz44OE44KnLCDjgqTjgr_jg6rjgqIg44OV44Kj44Os44Oz44OE44Kn!3m2!1d43.7699685!2d11.257670599999999!4m0!5e0!3m2!1sja!2sjp!4v1712470031504!5m2!1sja!2sjp" width="100%" height="190" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
   </main>
@@ -234,11 +249,34 @@
 
   <!-- jQueryの記述 -->
   <script>
+    // ハンバーガーメニュー
     $(function(){
       $(".hamburger").on("click", function(){
         $(".hamburger").toggleClass("open");
         $(".header_nav-sp").fadeToggle();
       });
+    // KVスライダー
+      $(".slider").slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: true
+      });
+    // ギャラリースライダー
+      $(".gallery").slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      })
     });
   </script>
 </body>

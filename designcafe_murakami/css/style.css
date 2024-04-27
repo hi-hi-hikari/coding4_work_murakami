@@ -10,6 +10,7 @@
   /* ↑　50/1990= 0.02512*/
   position: absolute;
   width: 100%;
+  z-index: 2;
 }
 
 .header_nav ul{
@@ -250,52 +251,6 @@ main{
   width: 240px;
 }
 
-/* GALLERYの左矢印 */
-#gallery div{
-  position: relative;
-}
-
-#gallery .arrow_l {
-  display: inline-block;
-  padding-left: 20px;
-  color: #ffffff;
-  text-decoration: none;
-}
-#gallery .arrow_l:before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  border-top: solid 5px #ffffff;
-  border-left: solid 5px #ffffff;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  bottom: 0;
-  margin: auto;
-}
-
-/* GALLERYの右矢印 */
-#gallery .arrow_r {
-  display: inline-block;
-  padding-left: 20px;
-  color: #ffffff;
-  text-decoration: none;
-}
-#gallery .arrow_r:before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  border-top: solid 5px #ffffff;
-  border-right: solid 5px #ffffff;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 10%;
-  right: 20%;
-  bottom: 0;
-  margin: auto;
-}
-
 #gallery ul{
   display: flex;
 }
@@ -348,6 +303,10 @@ main{
 #access .map{
   filter: grayscale(100%) invert(92%) contrast(83%);
   line-height: 0;
+}
+
+#access .map-sp{
+  display: none;
 }
 
 /* フッター */
@@ -499,6 +458,14 @@ main{
   }
 
 /* ACCESS */
+  #access .map-sp{
+    display: block;
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    line-height: 0;
+  }
+  #access .map{
+    display: none;
+  }
   #access h2{
     width: 120px;
     padding-top: 30px;
@@ -523,4 +490,18 @@ main{
 .toTOP{
   width: 80px;
 }
+}
+
+/* slickスタイルの設定 */
+.slick-dots{
+  bottom: 0;
+}
+.slick-dots li button:before{
+  color: #fff;
+}
+.slick-dots li.slick-active button:before{
+  color: #fff;
+}
+.slick-dotted.slick-slider{
+  margin-bottom: 0;
 }
