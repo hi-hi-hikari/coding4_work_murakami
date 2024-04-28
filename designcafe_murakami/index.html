@@ -9,6 +9,9 @@
   <!-- slickの読み込み -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <!-- lightboxの読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css">
   <!-- スタイルの読み込み -->
   <link rel="stylesheet" href="./css/style.css">
 
@@ -16,6 +19,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- slickの読み込み -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- lightboxの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </head>
 
 <body>
@@ -157,22 +162,22 @@
         <!-- 写真一覧 -->
         <ul class="gallery">
           <li>
-            <img src="./images/pc_gallary_05-100.jpg" alt="店内の様子">
+            <a href="./images/pc_gallary_05-100.jpg" data-lightbox="01" data-title="ゲストの交流が生まれる店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
           </li>
           <li>
-            <img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆">
+            <a href="./images/pc_gallary_04-100.jpg" data-lightbox="02" data-title="こだわりの豆"><img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆"></a>
           </li>
           <li>
-            <img src="./images/pc_gallary_03-100.jpg" alt="店内の様子">
+            <a href="./images/pc_gallary_03-100.jpg" data-lightbox="03" data-title="落ち着いた空間も"><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子2"></a>
           </li>
           <li>
-            <img src="./images/pc_gallary_02-100.jpg" alt="看板">
+            <a href="./images/pc_gallary_02-100.jpg" data-lightbox="04" data-title="店主のこだわりがつまったインテリア"><img src="./images/pc_gallary_02-100.jpg" alt="こだわりのインテリア"></a>
           </li>
           <li>
-            <img src="./images/pc_gallary_01-100.jpg" alt="ラテアート">
+            <a href="./images/pc_gallary_01-100.jpg" data-lightbox="05" data-title="人気のラテアート"><img src="./images/pc_gallary_01-100.jpg" alt="ラテアート"></a>
           </li>
           <li>
-            <img src="./images/pc_gallary_05-100.jpg" alt="店内の様子">
+            <a href="./images/pc_gallary_05-100.jpg" date-lightbox="06" data-title="店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
           </li>
         </ul>
     </section>
@@ -277,6 +282,10 @@
           }
         ]
       })
+    // ライトボックス2
+      $(window).on('load', function () {
+        $('.slick-cloned a').removeAttr('data-lightbox');
+      });
     });
   </script>
 </body>

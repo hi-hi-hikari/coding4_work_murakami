@@ -505,3 +505,8 @@ main{
 .slick-dotted.slick-slider{
   margin-bottom: 0;
 }
+
+/* ライトボックス */
+.lb-data .lb-caption{
+  color: #fff;
+}
