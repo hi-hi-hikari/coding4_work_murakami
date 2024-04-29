@@ -162,22 +162,22 @@
         <!-- 写真一覧 -->
         <ul class="gallery">
           <li>
-            <a href="./images/pc_gallary_05-100.jpg" data-lightbox="01" data-title="ゲストの交流が生まれる店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
+            <a href="./images/pc_gallary_05-100.jpg" data-lightbox="gallery" data-title="ゲストの交流が生まれる店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
           </li>
           <li>
-            <a href="./images/pc_gallary_04-100.jpg" data-lightbox="02" data-title="こだわりの豆"><img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆"></a>
+            <a href="./images/pc_gallary_04-100.jpg" data-lightbox="gallery" data-title="こだわりの豆"><img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆"></a>
           </li>
           <li>
-            <a href="./images/pc_gallary_03-100.jpg" data-lightbox="03" data-title="落ち着いた空間も"><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子2"></a>
+            <a href="./images/pc_gallary_03-100.jpg" data-lightbox="gallery" data-title="落ち着いた空間も"><img src="./images/pc_gallary_03-100.jpg" alt="店内の様子2"></a>
           </li>
           <li>
-            <a href="./images/pc_gallary_02-100.jpg" data-lightbox="04" data-title="店主のこだわりがつまったインテリア"><img src="./images/pc_gallary_02-100.jpg" alt="こだわりのインテリア"></a>
+            <a href="./images/pc_gallary_02-100.jpg" data-lightbox="gallery" data-title="店主のこだわりがつまったインテリア"><img src="./images/pc_gallary_02-100.jpg" alt="こだわりのインテリア"></a>
           </li>
           <li>
-            <a href="./images/pc_gallary_01-100.jpg" data-lightbox="05" data-title="人気のラテアート"><img src="./images/pc_gallary_01-100.jpg" alt="ラテアート"></a>
+            <a href="./images/pc_gallary_01-100.jpg" data-lightbox="gallery" data-title="人気のラテアート"><img src="./images/pc_gallary_01-100.jpg" alt="ラテアート"></a>
           </li>
           <li>
-            <a href="./images/pc_gallary_05-100.jpg" date-lightbox="06" data-title="店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
+            <a href="./images/pc_gallary_05-100.jpg" data-lightbox="gallery" data-title="ゲストの交流が生まれる店内"><img src="./images/pc_gallary_05-100.jpg" alt="店内の様子"></a>
           </li>
         </ul>
     </section>
@@ -273,6 +273,7 @@
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
+        arrows: false,
         responsive: [
           {
             breakpoint: 767,
@@ -281,10 +282,16 @@
             }
           }
         ]
-      })
+      });
     // ライトボックス2
-      $(window).on('load', function () {
-        $('.slick-cloned a').removeAttr('data-lightbox');
+      // $(window).on('load', function () {
+      //   $('.slick-cloned a').removeAttr('data-lightbox');
+      // });
+    });
+    $(function(){
+      lightbox.option({
+        showImageNumberLabel: false,
+        alwaysShowNavOnTouchDevices: false
       });
     });
   </script>
